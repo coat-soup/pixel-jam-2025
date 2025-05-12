@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/hud.gd" id="1_fs440"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "plant_bar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_fs440")
 fertiliser_label = NodePath("FertiliserLabel")
 seed_label = NodePath("SeedLabel")
+plant_bar = NodePath("PlantBar")
 
 [node name="FertiliserLabel" type="Label" parent="."]
 layout_mode = 0
@@ -32,4 +33,22 @@ offset_left = 523.0
 offset_top = 574.0
 offset_right = 708.0
 offset_bottom = 597.0
-text = "Press E to fertilise/plant"
+text = "Press E to fertilise/plant
+Scroll to select plant"
+
+[node name="PlantBar" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 913.0
+offset_top = 583.0
+offset_right = 953.0
+offset_bottom = 623.0
+
+[node name="Backgrounds" type="HBoxContainer" parent="PlantBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icons" type="HBoxContainer" parent="PlantBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
