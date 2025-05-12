@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cpskycn36lp2e"]
+[gd_scene load_steps=10 format=4 uid="uid://cpskycn36lp2e"]
 
 [ext_resource type="Script" path="res://system/scripts/game_manager.gd" id="1_30tsm"]
 [ext_resource type="PackedScene" uid="uid://b00gmy7bv7qai" path="res://player/player.tscn" id="1_bd3kk"]
@@ -7,10 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://doodsjk51d3so" path="res://system/scenes/fertiliser.tscn" id="5_oqs7s"]
 [ext_resource type="PackedScene" uid="uid://c3ucbhtcif5xh" path="res://system/scenes/seeds.tscn" id="6_b25l3"]
 [ext_resource type="Resource" uid="uid://v7hxoaplqdxc" path="res://plants/resources/prot_plant_wave.tres" id="7_qpp7y"]
+[ext_resource type="PackedScene" uid="uid://f785xxei2qnq" path="res://system/scenes/shrine.tscn" id="8_nckcs"]
+[ext_resource type="PackedScene" uid="uid://bcd8t2vl5nta6" path="res://enemies/enemy.tscn" id="9_minuh"]
 
-[node name="GameplayPrototyping" type="Node2D"]
+[node name="GameplayPrototyping" type="Node2D" node_paths=PackedStringArray("shrine")]
 y_sort_enabled = true
 script = ExtResource("1_30tsm")
+shrine = NodePath("Shrine")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -100
@@ -106,3 +109,32 @@ plant = ExtResource("7_qpp7y")
 
 [node name="PlantHolder" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="Shrine" parent="." instance=ExtResource("8_nckcs")]
+position = Vector2(89, 137)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Enemy" parent="Node" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_minuh")]
+position = Vector2(605, 224)
+game_manager = NodePath("../..")
+
+[node name="Enemy2" parent="Node" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_minuh")]
+position = Vector2(-249, 216)
+game_manager = NodePath("../..")
+
+[node name="Enemy3" parent="Node" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_minuh")]
+position = Vector2(-571, 186)
+game_manager = NodePath("../..")
+
+[node name="Enemy4" parent="Node" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_minuh")]
+position = Vector2(-387, -153)
+game_manager = NodePath("../..")
+
+[node name="Enemy5" parent="Node" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_minuh")]
+position = Vector2(220, -203)
+game_manager = NodePath("../..")
+
+[node name="Enemy6" parent="Node" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_minuh")]
+position = Vector2(541, 421)
+game_manager = NodePath("../..")

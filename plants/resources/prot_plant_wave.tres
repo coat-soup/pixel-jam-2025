@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=4 format=3 uid="uid://v7hxoaplqdxc"]
+[gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://v7hxoaplqdxc"]
 
 [ext_resource type="PackedScene" uid="uid://c5258de7ktio7" path="res://plants/scenes/plant_prototype_2.tscn" id="1_h27ay"]
+[ext_resource type="PackedScene" uid="uid://d0h8twwaq84qv" path="res://plants/scenes/projectile_attack.tscn" id="1_pfh6w"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="2_rmumo"]
 [ext_resource type="Texture2D" uid="uid://b8w7adrgo2jja" path="res://plants/sprites/plant-prot-alt.png" id="3_x1ssf"]
 
@@ -10,6 +11,7 @@ name = "Shockwave"
 prefab_scene = ExtResource("1_h27ay")
 sprite = ExtResource("3_x1ssf")
 growth_time = 8.0
-range = 4
+range = 10
 damage = 4.0
 speed = 0.3
+attack_scene = ExtResource("1_pfh6w")

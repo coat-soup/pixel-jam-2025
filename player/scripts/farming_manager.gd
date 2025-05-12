@@ -56,8 +56,9 @@ func try_plant(plant : Plant):
 	cur_seeds[seed_id] -= 1
 	player.hud.set_seeds_count(available_plants, cur_seeds)
 	
-	var spawned = plant.prefab_scene.instantiate()
+	var spawned = plant.prefab_scene.instantiate() as PlantBehaviour
 	spawned.position = tilemap.map_to_local(t_pos)
+	spawned.plant_data = plant
 	player.plant_holder.add_child(spawned)
 	planted_dict[t_pos] = spawned
 
