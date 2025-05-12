@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://bpem5vv10cdm6"]
+
+[ext_resource type="PackedScene" uid="uid://2oto82bbvo2k" path="res://plants/scenes/plant_prototype.tscn" id="1_etw7l"]
+[ext_resource type="Script" path="res://plants/scripts/plant.gd" id="1_pnopd"]
+[ext_resource type="PackedScene" uid="uid://d0h8twwaq84qv" path="res://plants/scenes/projectile_attack.tscn" id="1_qs81d"]
+[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="3_ukbx6"]
+
+[resource]
+script = ExtResource("1_pnopd")
+name = "Shooter"
+prefab_scene = ExtResource("1_etw7l")
+sprite = ExtResource("3_ukbx6")
+growth_time = 8.0
+range = 10
+damage = 4.0
+speed = 0.3
+attack_scene = ExtResource("1_qs81d")

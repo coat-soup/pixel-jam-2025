@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://2oto82bbvo2k"]
+
+[ext_resource type="Script" path="res://plants/scripts/plant_behaviour.gd" id="1_gcnie"]
+[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="1_s42yi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtdti"]
+size = Vector2(64, 64)
+
+[node name="PlantPrototype" type="Node2D"]
+script = ExtResource("1_gcnie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_s42yi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rtdti")

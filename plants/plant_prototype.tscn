@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://2oto82bbvo2k"]
-
-[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/plant-prot.png" id="1_s42yi"]
-
-[node name="PlantPrototype" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_s42yi")

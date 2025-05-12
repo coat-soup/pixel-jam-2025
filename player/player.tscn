@@ -1,17 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://b00gmy7bv7qai"]
+[gd_scene load_steps=12 format=3 uid="uid://b00gmy7bv7qai"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_fyvvm"]
-[ext_resource type="Texture2D" uid="uid://c2vhoha04ienm" path="res://player/scarecrow.png" id="1_qi8rk"]
+[ext_resource type="Texture2D" uid="uid://c2vhoha04ienm" path="res://player/scarecrow-prot.png" id="1_qi8rk"]
 [ext_resource type="Script" path="res://player/scripts/player_movement.gd" id="2_3mo3t"]
 [ext_resource type="Script" path="res://player/scripts/farming_manager.gd" id="3_l4854"]
+[ext_resource type="Script" path="res://plants/scripts/plant.gd" id="5_glohh"]
+[ext_resource type="Resource" uid="uid://bpem5vv10cdm6" path="res://plants/resources/prot_plant_shooter.tres" id="6_28hm6"]
+[ext_resource type="Resource" uid="uid://v7hxoaplqdxc" path="res://plants/resources/prot_plant_wave.tres" id="7_12su7"]
+[ext_resource type="Script" path="res://player/scripts/player_attack_manager.gd" id="8_ko4vy"]
+[ext_resource type="PackedScene" uid="uid://d4dwv7suvhn6s" path="res://player/player_swing_vfx.tscn" id="9_noxr8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t6l6"]
 radius = 29.0172
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdojh"]
+radius = 122.004
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fyvvm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -29)
 texture = ExtResource("1_qi8rk")
 offset = Vector2(0, -30.81)
@@ -29,3 +38,14 @@ player = NodePath("..")
 [node name="Farming" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_l4854")
 player = NodePath("..")
+available_plants = Array[ExtResource("5_glohh")]([ExtResource("6_28hm6"), ExtResource("7_12su7")])
+
+[node name="Attack" type="Node2D" parent="."]
+script = ExtResource("8_ko4vy")
+particles = ExtResource("9_noxr8")
+
+[node name="AttackCollision" type="Area2D" parent="Attack"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/AttackCollision"]
+position = Vector2(0, -32)
+shape = SubResource("CircleShape2D_bdojh")
