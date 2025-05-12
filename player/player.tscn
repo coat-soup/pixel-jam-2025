@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://b00gmy7bv7qai"]
+[gd_scene load_steps=6 format=3 uid="uid://b00gmy7bv7qai"]
 
-[node name="Player" type="Node2D"]
+[ext_resource type="Script" path="res://player/scripts/player.gd" id="1_fyvvm"]
+[ext_resource type="Texture2D" uid="uid://c2vhoha04ienm" path="res://player/scarecrow.png" id="1_qi8rk"]
+[ext_resource type="Script" path="res://player/scripts/player_movement.gd" id="2_3mo3t"]
+[ext_resource type="Script" path="res://player/scripts/farming_manager.gd" id="3_l4854"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t6l6"]
+radius = 29.0172
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fyvvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -53)
+texture = ExtResource("1_qi8rk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_1t6l6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_3mo3t")
+player = NodePath("..")
+
+[node name="Farming" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("3_l4854")
+player = NodePath("..")

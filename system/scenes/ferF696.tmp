@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://doodsjk51d3so"]
+
+[ext_resource type="Texture2D" uid="uid://cq2q8o0cywfp4" path="res://system/sprites/fertiliser.png" id="1_1s5dj"]
+[ext_resource type="Script" path="res://system/scripts/fertiliser.gd" id="1_b0tql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y62g1"]
+size = Vector2(65, 29)
+
+[node name="Fertiliser" type="Node2D"]
+script = ExtResource("1_b0tql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1s5dj")
+
+[node name="PickupTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupTrigger"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_y62g1")
