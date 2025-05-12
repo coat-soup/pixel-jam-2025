@@ -7,5 +7,5 @@ class_name Plant
 @export var growth_time : float = 8.0
 @export var range : int = 10
 @export var damage : float = 7
-@export var speed : float = 0.5
+@export var speed : float = 1
 @export var attack_scene : PackedScene

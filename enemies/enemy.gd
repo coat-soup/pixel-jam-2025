@@ -26,6 +26,10 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(amount : int):
 	cur_health -= amount
+	var s = float(cur_health)/float(max_health)
+	s = s/2 + 0.5
+	scale = Vector2(s, s)
+	print(scale)
 	if cur_health <= 0:
 		die()
 
