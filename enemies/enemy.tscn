@@ -1,5 +1,48 @@
-[gd_scene format=3 uid="uid://bcd8t2vl5nta6"]
+[gd_scene load_steps=7 format=3 uid="uid://bcd8t2vl5nta6"]
+
+[ext_resource type="Texture2D" uid="uid://b6gmttdano5a8" path="res://enemies/villager1.png" id="1_ymu84"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suam4"]
+atlas = ExtResource("1_ymu84")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jnxy"]
+atlas = ExtResource("1_ymu84")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmgm2"]
+atlas = ExtResource("1_ymu84")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q36hf"]
+atlas = ExtResource("1_ymu84")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unm4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suam4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jnxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmgm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q36hf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_unm4h")
+frame_progress = 0.22351
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
