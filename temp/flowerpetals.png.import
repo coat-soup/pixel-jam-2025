@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8p3q4y5ehkfh"
-path="res://.godot/imported/large shadow.png-8233b019697f145bb1bb98c96c60ab71.ctex"
+uid="uid://wtsjyxx7wh0e"
+path="res://.godot/imported/flowerpetals.png-380c5f1779f27af79147e7528637ba1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/large shadow.png"
-dest_files=["res://.godot/imported/large shadow.png-8233b019697f145bb1bb98c96c60ab71.ctex"]
+source_file="res://temp/flowerpetals.png"
+dest_files=["res://.godot/imported/flowerpetals.png-380c5f1779f27af79147e7528637ba1b.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://1mcrivp37vkl"]
 
-[ext_resource type="Texture2D" uid="uid://8p3q4y5ehkfh" path="res://player/large shadow.png" id="1_p6j65"]
-[ext_resource type="Texture2D" uid="uid://y4m6fi5df68x" path="res://player/scarecrownew.png" id="2_tpfu0"]
+[ext_resource type="Texture2D" uid="uid://8p3q4y5ehkfh" path="res://player/sprites/large shadow.png" id="1_p6j65"]
+[ext_resource type="Texture2D" uid="uid://y4m6fi5df68x" path="res://player/sprites/scarecrownew.png" id="2_tpfu0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbxvq"]
 atlas = ExtResource("2_tpfu0")

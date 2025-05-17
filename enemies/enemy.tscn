@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcd8t2vl5nta6"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_cgad8"]
-[ext_resource type="Texture2D" uid="uid://d18yilqfkywag" path="res://enemies/sprites/enemy-prot.png" id="2_pvpjj"]
+[ext_resource type="Texture2D" uid="uid://cuj0so2msm7am" path="res://enemies/sprites/villager1.png" id="2_11qy0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ippk"]
 radius = 22.0
@@ -11,9 +11,11 @@ script = ExtResource("1_cgad8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -6)
-texture = ExtResource("2_pvpjj")
+texture = ExtResource("2_11qy0")
 offset = Vector2(0, -18.22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_2ippk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

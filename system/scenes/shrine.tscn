@@ -1,26 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://f785xxei2qnq"]
+[gd_scene load_steps=3 format=3 uid="uid://f785xxei2qnq"]
+
+[ext_resource type="Texture2D" uid="uid://b8ogv4iy56x88" path="res://world/shrine.png" id="1_p0c23"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rnkf8"]
-radius = 38.0132
+radius = 19.2354
 
 [node name="Shrine" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p0c23")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 64.0
 offset_bottom = 64.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(30, 34)
 shape = SubResource("CircleShape2D_rnkf8")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 5.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 45.0
+offset_left = -25.0
+offset_top = 16.0
+offset_right = 29.0
+offset_bottom = 39.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "100 HP"
