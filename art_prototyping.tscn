@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dpdigqcij044q"]
+[gd_scene load_steps=9 format=4 uid="uid://c0afgpaw8tr1q"]
 
 [ext_resource type="Texture2D" uid="uid://ccagt33jipa3t" path="res://world/bridgetest.png" id="1_k3o8j"]
 [ext_resource type="Texture2D" uid="uid://chtlb6rqus72s" path="res://world/waterfullsheet.png" id="2_g7xgo"]

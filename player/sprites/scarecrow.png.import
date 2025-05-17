@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btmj0m1ehvuu2"
-path="res://.godot/imported/small shadow.png-69d428a8cb0865f445c8ae01472476b0.ctex"
+uid="uid://srxbqq6bmlm0"
+path="res://.godot/imported/scarecrow.png-89ffeca470a8b9569648aa2aae255ba9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/small shadow.png"
-dest_files=["res://.godot/imported/small shadow.png-69d428a8cb0865f445c8ae01472476b0.ctex"]
+source_file="res://player/sprites/scarecrow.png"
+dest_files=["res://.godot/imported/scarecrow.png-89ffeca470a8b9569648aa2aae255ba9.ctex"]
 
 [params]
 
