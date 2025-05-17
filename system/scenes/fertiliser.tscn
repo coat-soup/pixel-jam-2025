@@ -1,7 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://doodsjk51d3so"]
+[gd_scene load_steps=9 format=3 uid="uid://doodsjk51d3so"]
 
 [ext_resource type="Texture2D" uid="uid://cq2q8o0cywfp4" path="res://system/sprites/fertiliser.png" id="1_1s5dj"]
 [ext_resource type="Script" path="res://system/scripts/fertiliser.gd" id="1_b0tql"]
+[ext_resource type="Texture2D" uid="uid://bshcamald88sx" path="res://world/newcorpse.png" id="2_bcb08"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ym6"]
+atlas = ExtResource("2_bcb08")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v51yp"]
+atlas = ExtResource("2_bcb08")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8e1f"]
+atlas = ExtResource("2_bcb08")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba5te"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ym6")
+}],
+"loop": true,
+"name": &"Corpse1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v51yp")
+}],
+"loop": true,
+"name": &"Corpse2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8e1f")
+}],
+"loop": true,
+"name": &"Corpse3",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y62g1"]
 size = Vector2(65, 29)
@@ -10,7 +50,12 @@ size = Vector2(65, 29)
 y_sort_enabled = true
 script = ExtResource("1_b0tql")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ba5te")
+animation = &"Corpse3"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_1s5dj")
 
 [node name="PickupTrigger" type="Area2D" parent="."]
