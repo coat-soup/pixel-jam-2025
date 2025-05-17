@@ -14,6 +14,8 @@ var cur_seed_id := 0
 
 var planted_dict = {}
 
+var grass_layer_source_ID = 3
+var fertilised_layer_source_ID = -10000000
 
 func _ready():
 	tilemap = player.tilemap
@@ -26,7 +28,7 @@ func _ready():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if get_cur_tile() == Vector2i(0,0):
+		if get_cur_id() == fertilised_layer_source_ID:
 			try_plant(available_plants[cur_seed_id])
 		else:
 			try_fertilise()
@@ -46,7 +48,7 @@ func try_plant(plant : Plant):
 	if cur_seeds[seed_id] <= 0:
 		print("No seeds!")
 		return
-	elif get_cur_tile() != Vector2i(0,0):
+	elif true or get_cur_id() != -1: #(fertilised layer)
 		print("Not fertilised!")
 		return
 	elif planted_dict.has(t_pos):
@@ -67,7 +69,7 @@ func try_fertilise():
 	if cur_fertiliser <= 0:
 		print("No fertiliser!")
 		return
-	elif get_cur_tile() != Vector2i(0,1):
+	elif get_cur_id() != grass_layer_source_ID:
 		print("Wrong tile!")
 		return
 	
@@ -92,3 +94,6 @@ func add_seed(plant : Plant, amount := 1):
 
 func get_cur_tile() -> Vector2i:
 	return tilemap.get_cell_atlas_coords(tilemap.local_to_map(player.position))
+
+func get_cur_id() -> int:
+	return tilemap.get_cell_source_id(tilemap.local_to_map(player.position))
