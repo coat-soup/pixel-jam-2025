@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dihmrukn3vdjy"]
+
+[ext_resource type="Texture2D" uid="uid://cy50q1i12rsgy" path="res://UI/bloodsprite.png" id="1_4kw72"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbj4r"]
+atlas = ExtResource("1_4kw72")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3ux3"]
+atlas = ExtResource("1_4kw72")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evde6"]
+atlas = ExtResource("1_4kw72")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa0kf"]
+atlas = ExtResource("1_4kw72")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qw85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbj4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3ux3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evde6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa0kf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="BloodParticle" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -6)
+sprite_frames = SubResource("SpriteFrames_1qw85")
+frame_progress = 0.531943
