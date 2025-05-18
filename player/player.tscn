@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b00gmy7bv7qai"]
+[gd_scene load_steps=17 format=3 uid="uid://b00gmy7bv7qai"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_fyvvm"]
 [ext_resource type="Script" path="res://player/scripts/player_movement.gd" id="2_3mo3t"]
@@ -8,7 +8,58 @@
 [ext_resource type="Resource" uid="uid://bpem5vv10cdm6" path="res://plants/resources/prot_plant_shooter.tres" id="6_28hm6"]
 [ext_resource type="Resource" uid="uid://v7hxoaplqdxc" path="res://plants/resources/prot_plant_wave.tres" id="7_12su7"]
 [ext_resource type="Script" path="res://player/scripts/player_attack_manager.gd" id="8_ko4vy"]
-[ext_resource type="PackedScene" uid="uid://d4dwv7suvhn6s" path="res://player/player_swing_vfx.tscn" id="9_noxr8"]
+[ext_resource type="PackedScene" path="res://player/player_swing_vfx.tscn" id="9_noxr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3o0q"]
+atlas = ExtResource("2_grwav")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec15n"]
+atlas = ExtResource("2_grwav")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thp6q"]
+atlas = ExtResource("2_grwav")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgahm"]
+atlas = ExtResource("2_grwav")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lchj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3o0q")
+}],
+"loop": true,
+"name": &"PDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec15n")
+}],
+"loop": true,
+"name": &"PLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thp6q")
+}],
+"loop": true,
+"name": &"PRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgahm")
+}],
+"loop": true,
+"name": &"PUp",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t6l6"]
 radius = 13.0384
@@ -20,12 +71,16 @@ radius = 36.1248
 script = ExtResource("1_fyvvm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(0, -29)
 texture = ExtResource("2_grwav")
 offset = Vector2(0, -30.81)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
+sprite_frames = SubResource("SpriteFrames_lchj3")
+animation = &"PUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -29)

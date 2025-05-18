@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcd8t2vl5nta6"]
+[gd_scene load_steps=13 format=3 uid="uid://bcd8t2vl5nta6"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_cgad8"]
 [ext_resource type="Texture2D" uid="uid://cuj0so2msm7am" path="res://enemies/sprites/villager1.png" id="2_11qy0"]
@@ -6,10 +6,110 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ippk"]
 radius = 22.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylh13"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o62m"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sdqi"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o20k"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjhv8"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7abo"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkyqd"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11tad"]
+atlas = ExtResource("2_11qy0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vktcu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylh13")
+}],
+"loop": true,
+"name": &"E1Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o62m")
+}],
+"loop": true,
+"name": &"E1Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sdqi")
+}],
+"loop": true,
+"name": &"E1Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o20k")
+}],
+"loop": true,
+"name": &"E1Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjhv8")
+}],
+"loop": true,
+"name": &"FDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7abo")
+}],
+"loop": true,
+"name": &"FLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkyqd")
+}],
+"loop": true,
+"name": &"FRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11tad")
+}],
+"loop": true,
+"name": &"FUp",
+"speed": 5.0
+}]
+
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_cgad8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -6)
 texture = ExtResource("2_11qy0")
 offset = Vector2(0, -18.22)
@@ -19,3 +119,5 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_2ippk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vktcu")
+animation = &"E1Down"

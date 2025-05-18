@@ -1,8 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3ucbhtcif5xh"]
+[gd_scene load_steps=8 format=3 uid="uid://c3ucbhtcif5xh"]
 
 [ext_resource type="Script" path="res://system/scripts/seeds.gd" id="1_6da7d"]
 [ext_resource type="Texture2D" uid="uid://bv4uxsssny2rf" path="res://system/sprites/seeds.png" id="2_at480"]
 [ext_resource type="Resource" uid="uid://bpem5vv10cdm6" path="res://plants/resources/prot_plant_shooter.tres" id="2_ee0lf"]
+[ext_resource type="Texture2D" uid="uid://dvdab744fpl5o" path="res://UI/seedandcorpsecount.png" id="3_45stb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwb1w"]
+atlas = ExtResource("3_45stb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j806o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwb1w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8y2"]
 radius = 15.5081
@@ -12,7 +28,12 @@ y_sort_enabled = true
 script = ExtResource("1_6da7d")
 plant = ExtResource("2_ee0lf")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 0)
+sprite_frames = SubResource("SpriteFrames_j806o")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_at480")
 
 [node name="PickupTrigger" type="Area2D" parent="."]
