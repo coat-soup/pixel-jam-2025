@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://bcag5ru8powrx"]
+
+[ext_resource type="PackedScene" uid="uid://de4qamindjel8" path="res://plants/scenes/projectile_dot.tscn" id="1_6kff0"]
+[ext_resource type="PackedScene" uid="uid://2oto82bbvo2k" path="res://plants/scenes/plant_prototype.tscn" id="2_optuw"]
+[ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_gos3i"]
+[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="4_bqph1"]
+
+[resource]
+script = ExtResource("3_gos3i")
+name = "Fire"
+prefab_scene = ExtResource("2_optuw")
+sprite = ExtResource("4_bqph1")
+growth_time = 8.0
+range = 10.0
+damage = 4.0
+speed = 0.3
+attack_scene = ExtResource("1_6kff0")

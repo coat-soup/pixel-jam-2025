@@ -1,5 +1,6 @@
 extends PlantAttack
 
+@export var status_effect : StatusEffect
 
 func _ready() -> void:
 	collider.body_entered.connect(on_body_entered)
@@ -20,4 +21,6 @@ func on_body_entered(body : Node2D):
 	body = body as Enemy
 	if body:
 		body.take_damage(plant_data.damage)
+		if status_effect:
+			body.apply_status_effect(status_effect)
 		queue_free()

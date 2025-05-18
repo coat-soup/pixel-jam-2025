@@ -5,9 +5,12 @@ class_name HUD
 @export var seed_label : Label
 const BAR_SLOT_SPRITE = preload("res://UI/bar_slot_sprite.tscn")
 @export var plant_bar : Control
+@export var seed_name_label : Label
 
+var plants: Array[Plant]
 
-func initialise_plant_bar(plants: Array[Plant]):
+func initialise_plant_bar(ps: Array[Plant]):
+	plants = ps
 	for p in plants:
 		plant_bar.get_child(0).add_child(BAR_SLOT_SPRITE.instantiate())
 		
@@ -19,6 +22,7 @@ func initialise_plant_bar(plants: Array[Plant]):
 func set_selected_plant(id: int):
 	for i in range(plant_bar.get_child(0).get_child_count()):
 		(plant_bar.get_child(0).get_child(i).get_child(0) as Control).visible = i == id
+	seed_name_label.text = plants[id].name
 
 
 func set_fertiliser_count(amount: int):
