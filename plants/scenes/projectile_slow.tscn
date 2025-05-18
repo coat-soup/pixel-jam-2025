@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0h8twwaq84qv"]
+[gd_scene load_steps=5 format=3 uid="uid://bgyrp00qt1b02"]
 
-[ext_resource type="Script" path="res://plants/scripts/projectile_attack.gd" id="1_leprq"]
+[ext_resource type="Script" path="res://plants/scripts/projectile_attack.gd" id="1_a1tmx"]
+[ext_resource type="Script" path="res://system/status_effects/slow_status.gd" id="2_bi6u4"]
+
+[sub_resource type="Resource" id="Resource_g8wwi"]
+script = ExtResource("2_bi6u4")
+speed_multiplier = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11os5"]
 radius = 6.0
 
 [node name="ProjectileAttack" type="Node2D" node_paths=PackedStringArray("collider")]
-script = ExtResource("1_leprq")
+script = ExtResource("1_a1tmx")
+status_effect = SubResource("Resource_g8wwi")
 collider = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,4 +29,4 @@ offset_left = -5.0
 offset_top = -5.0
 offset_right = 5.0
 offset_bottom = 5.0
-color = Color(1, 0, 0.0166664, 1)
+color = Color(0.197163, 0.521394, 0.972836, 1)

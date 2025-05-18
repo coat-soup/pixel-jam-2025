@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/hud.gd" id="1_fs440"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "plant_bar")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "blood_label", "plant_bar", "seed_name_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,9 @@ grow_vertical = 2
 script = ExtResource("1_fs440")
 fertiliser_label = NodePath("FertiliserLabel")
 seed_label = NodePath("SeedLabel")
+blood_label = NodePath("BloodLabel")
 plant_bar = NodePath("PlantBar")
+seed_name_label = NodePath("SelectedSeedName")
 
 [node name="FertiliserLabel" type="Label" parent="."]
 layout_mode = 0
@@ -27,21 +29,36 @@ offset_right = 77.0
 offset_bottom = 48.0
 text = "Seeds: 0"
 
+[node name="BloodLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 77.0
+offset_bottom = 72.0
+text = "Blood: 0"
+
 [node name="PromptText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 574.0
-offset_right = 708.0
-offset_bottom = 597.0
+offset_left = 234.0
+offset_right = 419.0
+offset_bottom = 49.0
 text = "Press E to fertilise/plant
 Scroll to select plant"
 
+[node name="SelectedSeedName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 283.0
+offset_right = 419.0
+offset_bottom = 332.0
+text = "nplant"
+horizontal_alignment = 1
+
 [node name="PlantBar" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 913.0
-offset_top = 583.0
-offset_right = 953.0
-offset_bottom = 623.0
+offset_left = 182.0
+offset_top = 305.0
+offset_right = 222.0
+offset_bottom = 345.0
 
 [node name="Backgrounds" type="HBoxContainer" parent="PlantBar"]
 layout_mode = 0

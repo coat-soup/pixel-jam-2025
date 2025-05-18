@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg70xkelxck87"]
+
+[ext_resource type="Script" path="res://plants/scripts/aoe_attack.gd" id="1_lubq1"]
+[ext_resource type="Texture2D" uid="uid://cpryd7ym5dkh1" path="res://system/sprites/effects.png" id="2_xqy8r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11os5"]
+radius = 50.0
+
+[sub_resource type="Animation" id="Animation_348x8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hk1fn"]
+resource_name = "trigger"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8mwj"]
+_data = {
+"RESET": SubResource("Animation_348x8"),
+"trigger": SubResource("Animation_hk1fn")
+}
+
+[node name="AOEAttack" type="Node2D" node_paths=PackedStringArray("collider")]
+script = ExtResource("1_lubq1")
+knockback = 50.0
+collider = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xqy8r")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_11os5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m8mwj")
+}
+autoplay = "trigger"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(0.398334, 0.515234, 0.854905, 1)

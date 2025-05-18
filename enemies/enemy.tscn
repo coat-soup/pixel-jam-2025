@@ -226,7 +226,9 @@ _data = {
 "RESET": SubResource("Animation_ey8rj")
 }
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_cgad8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

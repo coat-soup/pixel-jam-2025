@@ -3,11 +3,17 @@ class_name HUD
 
 @export var fertiliser_label : Label
 @export var seed_label : Label
-const BAR_SLOT_SPRITE = preload("res://UI/bar_slot_sprite.tscn")
+@export var blood_label : Label
 @export var plant_bar : Control
+@export var seed_name_label : Label
+
+const BAR_SLOT_SPRITE = preload("res://UI/bar_slot_sprite.tscn")
+
+var plants: Array[Plant]
 
 
-func initialise_plant_bar(plants: Array[Plant]):
+func initialise_plant_bar(ps: Array[Plant]):
+	plants = ps
 	for p in plants:
 		plant_bar.get_child(0).add_child(BAR_SLOT_SPRITE.instantiate())
 		
@@ -19,13 +25,16 @@ func initialise_plant_bar(plants: Array[Plant]):
 func set_selected_plant(id: int):
 	for i in range(plant_bar.get_child(0).get_child_count()):
 		(plant_bar.get_child(0).get_child(i).get_child(0) as Control).visible = i == id
+	seed_name_label.text = plants[id].name
 
 
 func set_fertiliser_count(amount: int):
 	fertiliser_label.text = "Fertiliser: " + str(amount)
 
 
-func set_seeds_count(plants: Array[Plant], seeds: Array[int]):
-	seed_label.text = ""
-	for i in range(len(plants)):
-		seed_label.text += plants[i].name + " seeds: " + str(seeds[i]) + "\n"
+func set_seeds_count(seeds: int):
+	seed_label.text = "Seeds: " + str(seeds)
+
+
+func set_blood_count(amount: int):
+	blood_label.text = "Blood: " + str(amount)
