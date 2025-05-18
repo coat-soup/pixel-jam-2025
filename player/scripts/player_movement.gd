@@ -17,11 +17,11 @@ func _physics_process(delta: float) -> void:
 	player.velocity = get_input() * speed
 	player.move_and_slide()
 	
-	if Input.is_action_pressed("left"):
-		playerSprite.play("PLeft")
-	if Input.is_action_pressed("right"):
-		playerSprite.play("PRight")
-	if Input.is_action_pressed("up"):
-		playerSprite.play("PUp")
-	if Input.is_action_pressed("down"):
-		playerSprite.play("PDown")
+	#if Input.is_action_pressed("left"):
+		#playerSprite.play("PLeft")
+	#if Input.is_action_pressed("right"):
+		#playerSprite.play("PRight")
+	#if Input.is_action_pressed("up"):
+		#playerSprite.play("PUp")
+	#if Input.is_action_pressed("down"):
+		#playerSprite.play("PDown")

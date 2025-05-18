@@ -1,16 +1,18 @@
-[gd_scene load_steps=18 format=4 uid="uid://bksw17igtqno0"]
+[gd_scene load_steps=24 format=4 uid="uid://bksw17igtqno0"]
 
 [ext_resource type="Texture2D" uid="uid://cvkk56wg5gehf" path="res://world/path.png" id="1_4djxf"]
 [ext_resource type="Script" path="res://system/scripts/game_manager.gd" id="1_vcjyp"]
 [ext_resource type="Texture2D" uid="uid://ccagt33jipa3t" path="res://world/bridgetest.png" id="1_y2t6i"]
 [ext_resource type="Texture2D" uid="uid://chtlb6rqus72s" path="res://world/waterfullsheet.png" id="2_ampt4"]
 [ext_resource type="PackedScene" uid="uid://1mcrivp37vkl" path="res://levels/playerTest.tscn" id="3_35ws6"]
+[ext_resource type="Texture2D" uid="uid://b5e8m6wyahkrg" path="res://world/fertilizedtiles.png" id="4_cit4b"]
 [ext_resource type="PackedScene" uid="uid://b00gmy7bv7qai" path="res://player/player.tscn" id="5_6clrj"]
 [ext_resource type="PackedScene" uid="uid://jnsgf244fssk" path="res://UI/HUD.tscn" id="6_7okgu"]
 [ext_resource type="PackedScene" uid="uid://f785xxei2qnq" path="res://system/scenes/shrine.tscn" id="7_poq4l"]
 [ext_resource type="PackedScene" uid="uid://c3ucbhtcif5xh" path="res://system/scenes/seeds.tscn" id="8_6de6k"]
 [ext_resource type="PackedScene" uid="uid://doodsjk51d3so" path="res://system/scenes/fertiliser.tscn" id="9_sb3b8"]
 [ext_resource type="PackedScene" uid="uid://bcd8t2vl5nta6" path="res://enemies/enemy.tscn" id="10_hjc4k"]
+[ext_resource type="Texture2D" uid="uid://c2x1yws6xqgux" path="res://world/cloudmap.png" id="13_rt1yw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j03qi"]
 texture = ExtResource("1_4djxf")
@@ -42,6 +44,21 @@ texture = ExtResource("1_y2t6i")
 2:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0g1e"]
+texture = ExtResource("4_cit4b")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_agmdv"]
 load_path = "res://.godot/imported/grassfullsheet.png-74aeda91dec7569cbef4ebf13e6a6585.ctex"
@@ -95,6 +112,45 @@ sources/3 = SubResource("TileSetAtlasSource_b5b73")
 sources/6 = SubResource("TileSetAtlasSource_23fse")
 sources/1 = SubResource("TileSetAtlasSource_7i0s0")
 sources/0 = SubResource("TileSetAtlasSource_j03qi")
+sources/2 = SubResource("TileSetAtlasSource_a0g1e")
+
+[sub_resource type="Animation" id="Animation_4vvw7"]
+resource_name = "cloudmove"
+length = 300.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 300),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(600, 600, 600, 600), Rect2(-40, 600, 600, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_rikba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(600, 600, 600, 600)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4hseq"]
+_data = {
+"RESET": SubResource("Animation_rikba"),
+"cloudmove": SubResource("Animation_4vvw7")
+}
 
 [node name="ArtPrototyping" type="Node2D" node_paths=PackedStringArray("hud", "shrine")]
 script = ExtResource("1_vcjyp")
@@ -144,3 +200,20 @@ position = Vector2(95, -204)
 [node name="Enemy" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("10_hjc4k")]
 position = Vector2(-98, -45)
 game_manager = NodePath("..")
+
+[node name="Cloudmap" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.505882)
+z_index = 100
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-187, -97)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("13_rt1yw")
+region_enabled = true
+region_rect = Rect2(600, 600, 600, 600)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cloudmap"]
+libraries = {
+"": SubResource("AnimationLibrary_4hseq")
+}
+autoplay = "cloudmove"

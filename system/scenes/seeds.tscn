@@ -21,7 +21,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hd8y2"]
-radius = 15.5081
+radius = 11.5109
 
 [node name="Seeds" type="Node2D"]
 y_sort_enabled = true
