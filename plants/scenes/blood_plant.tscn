@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://onptea7a38tv"]
+
+[ext_resource type="Script" path="res://plants/scripts/plant_behaviour.gd" id="1_81y6q"]
+[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="2_i55ye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtdti"]
+size = Vector2(16, 16)
+
+[node name="BloodPlant" type="Node2D" groups=["bloodplant"]]
+script = ExtResource("1_81y6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
+texture = ExtResource("2_i55ye")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rtdti")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.835575, 0.256572, 0.302219, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -14.0
+offset_right = 27.0
+offset_bottom = 9.0
+text = "Blood"

@@ -66,4 +66,9 @@ func take_damage(amount : int):
 
 
 func die():
+	for plant in get_tree().get_nodes_in_group("bloodplant"):
+		plant = plant as PlantBehaviour
+		if plant.global_position.distance_to(global_position) <= plant.plant_data.range * 16:
+			game_manager.player.farming.add_blood(1)
+			continue
 	queue_free()

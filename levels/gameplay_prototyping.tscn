@@ -152,10 +152,11 @@ _data = {
 "cloudmove": SubResource("Animation_4vvw7")
 }
 
-[node name="ArtPrototyping" type="Node2D" node_paths=PackedStringArray("hud", "shrine")]
+[node name="ArtPrototyping" type="Node2D" node_paths=PackedStringArray("hud", "shrine", "player")]
 script = ExtResource("1_nv81b")
 hud = NodePath("Player/Hud")
 shrine = NodePath("Shrine")
+player = NodePath("Player")
 
 [node name="Terrain" type="TileMapLayer" parent="."]
 texture_filter = 1

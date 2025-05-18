@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://dtr4o6yeerxki"]
+
+[ext_resource type="PackedScene" uid="uid://cwq5j07x8t8ml" path="res://plants/scenes/aoe_attack.tscn" id="1_23x4w"]
+[ext_resource type="PackedScene" uid="uid://2oto82bbvo2k" path="res://plants/scenes/plant_prototype.tscn" id="2_arxq5"]
+[ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_gulrh"]
+[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="4_cb0nh"]
+
+[resource]
+script = ExtResource("3_gulrh")
+name = "Explody"
+prefab_scene = ExtResource("2_arxq5")
+sprite = ExtResource("4_cb0nh")
+growth_time = 8.0
+blood_cost = 1
+range = 8.0
+damage = 0.0
+speed = 0.5
+attack_scene = ExtResource("1_23x4w")
+attack_delay = 0.0

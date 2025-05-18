@@ -14,6 +14,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if plant_data.speed == 0:
+		return
 	if time_to_attack > 0:
 		time_to_attack -= delta
 	else:
@@ -21,12 +23,12 @@ func _process(delta: float) -> void:
 		for enemy in enemies:
 			enemy = enemy as Enemy
 			if enemy:
-				print("found ", enemy, " in range")
 				attack(enemy)
 				return
 
 
 func attack(target : Node2D):
+	await get_tree().create_timer(plant_data.attack_delay).timeout
 	var attack_scene = plant_data.attack_scene.instantiate() as PlantAttack
 	#attack_scene.position = position
 	attack_scene.plant_data = plant_data

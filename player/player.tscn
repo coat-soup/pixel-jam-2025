@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b00gmy7bv7qai"]
+[gd_scene load_steps=31 format=3 uid="uid://b00gmy7bv7qai"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_fyvvm"]
 [ext_resource type="Script" path="res://player/scripts/player_movement.gd" id="2_3mo3t"]
@@ -12,7 +12,9 @@
 [ext_resource type="Resource" uid="uid://bcag5ru8powrx" path="res://plants/resources/plant_fire.tres" id="9_6i5mg"]
 [ext_resource type="PackedScene" uid="uid://d4dwv7suvhn6s" path="res://player/player_swing_vfx.tscn" id="9_noxr8"]
 [ext_resource type="Resource" uid="uid://b6h4bprexipwk" path="res://plants/resources/plant_ice.tres" id="10_5phff"]
+[ext_resource type="Resource" uid="uid://dtr4o6yeerxki" path="res://plants/resources/plant_explody.tres" id="10_lrgl1"]
 [ext_resource type="Texture2D" uid="uid://c6usxe7kphim0" path="res://player/sprites/scythe.png" id="10_sfnxl"]
+[ext_resource type="Resource" uid="uid://cnt14b4d0qrbl" path="res://plants/resources/plant_blood.tres" id="11_0c8n4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3o0q"]
 atlas = ExtResource("2_grwav")
@@ -205,7 +207,7 @@ speed = 150.0
 [node name="Farming" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_l4854")
 player = NodePath("..")
-available_plants = Array[ExtResource("5_glohh")]([ExtResource("6_28hm6"), ExtResource("8_07a6f"), ExtResource("8_33nmf"), ExtResource("10_5phff"), ExtResource("9_6i5mg")])
+available_plants = Array[ExtResource("5_glohh")]([ExtResource("6_28hm6"), ExtResource("8_07a6f"), ExtResource("8_33nmf"), ExtResource("10_5phff"), ExtResource("9_6i5mg"), ExtResource("10_lrgl1"), ExtResource("11_0c8n4")])
 
 [node name="sprite container" type="Node2D" parent="."]
 

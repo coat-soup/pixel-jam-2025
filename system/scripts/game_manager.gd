@@ -5,6 +5,7 @@ class_name GameManager
 @export var shrine : Node2D
 @export var shrine_hp := 100
 @onready var cur_shrine_hp : int = shrine_hp
+@export var player : Player
 
 
 func _input(event: InputEvent) -> void:

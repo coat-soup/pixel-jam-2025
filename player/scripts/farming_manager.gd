@@ -7,6 +7,7 @@ var tilemap : TileMapLayer
 
 var cur_fertiliser := 0
 var cur_seeds := 0
+var cur_blood := 0
 
 var cur_seed_id := 0
 
@@ -52,9 +53,14 @@ func try_plant(plant : Plant):
 	elif planted_dict.has(t_pos):
 		print("No space!")
 		return
+	elif cur_blood < plant.blood_cost:
+		print("Not enough blood!")
+		return
 	
+	cur_blood -= plant.blood_cost
 	cur_seeds -= 1
 	player.hud.set_seeds_count(cur_seeds)
+	player.hud.set_blood_count(cur_blood)
 	
 	var spawned = plant.prefab_scene.instantiate() as PlantBehaviour
 	spawned.position = tilemap.map_to_local(t_pos)
@@ -88,6 +94,11 @@ func add_seed(amount := 1):
 	cur_seeds += amount
 	player.hud.set_seeds_count(cur_seeds)
 	print("picked up seed")
+
+
+func add_blood(amount := 1):
+	cur_blood += amount
+	player.hud.set_blood_count(cur_blood)
 
 
 func get_cur_tile() -> Vector2i:
