@@ -4,7 +4,7 @@ extends Node
 
 @export var speed := 400.0
 
-@onready var playerSprite = $"../AnimatedSprite2D"
+#@onready var playerSprite = $"../AnimatedSprite2D"
 
 
 func get_input() -> Vector2:

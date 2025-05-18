@@ -29,19 +29,19 @@ text = "Seeds: 0"
 
 [node name="PromptText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 574.0
-offset_right = 708.0
-offset_bottom = 597.0
+offset_left = 233.0
+offset_top = 277.0
+offset_right = 418.0
+offset_bottom = 326.0
 text = "Press E to fertilise/plant
 Scroll to select plant"
 
 [node name="PlantBar" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 913.0
-offset_top = 583.0
-offset_right = 953.0
-offset_bottom = 623.0
+offset_left = 429.0
+offset_top = 303.0
+offset_right = 469.0
+offset_bottom = 343.0
 
 [node name="Backgrounds" type="HBoxContainer" parent="PlantBar"]
 layout_mode = 0

@@ -1,7 +1,5 @@
 extends Node
 
-@export var plant : Plant
-
 @onready var pickup_trigger: Area2D = $PickupTrigger
 
 
@@ -13,5 +11,5 @@ func on_body_entered(body: Node2D):
 	var player = body as Player
 	if player:
 		player = player.get_node("Farming") as FarmingManager
-		player.add_seed(plant)
+		player.add_seed()
 		queue_free()

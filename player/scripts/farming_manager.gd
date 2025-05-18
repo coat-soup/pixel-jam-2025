@@ -6,7 +6,7 @@ class_name FarmingManager
 var tilemap : TileMapLayer
 
 var cur_fertiliser := 0
-var cur_seeds : Array[int]
+var cur_seeds := 0
 
 var cur_seed_id := 0
 
@@ -15,12 +15,10 @@ var cur_seed_id := 0
 var planted_dict = {}
 
 var grass_layer_source_ID = 3
-var fertilised_layer_source_ID = -10000000
+var fertilised_layer_source_ID = 2
 
 func _ready():
 	tilemap = player.tilemap
-	for i in range(len(available_plants)):
-		cur_seeds.append(0)
 	
 	player.hud.initialise_plant_bar(available_plants)
 	player.hud.set_selected_plant(cur_seed_id)
@@ -37,7 +35,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("next_plant"): sp = 1
 	elif Input.is_action_just_released("prev_plant"): sp = -1
 	if sp != 0:
-		cur_seed_id = posmod((cur_seed_id + sp), len(available_plants))
+		cur_seed_id = posmod((cur_seed_id - sp), len(available_plants))
 		player.hud.set_selected_plant(cur_seed_id)
 		print(cur_seed_id)
 
@@ -45,18 +43,18 @@ func _input(event: InputEvent) -> void:
 func try_plant(plant : Plant):
 	var seed_id = available_plants.find(plant)
 	var t_pos = tilemap.local_to_map(player.position)
-	if cur_seeds[seed_id] <= 0:
+	if cur_seeds <= 0:
 		print("No seeds!")
 		return
-	elif true or get_cur_id() != -1: #(fertilised layer)
+	elif get_cur_id() != fertilised_layer_source_ID:
 		print("Not fertilised!")
 		return
 	elif planted_dict.has(t_pos):
 		print("No space!")
 		return
 	
-	cur_seeds[seed_id] -= 1
-	player.hud.set_seeds_count(available_plants, cur_seeds)
+	cur_seeds -= 1
+	player.hud.set_seeds_count(cur_seeds)
 	
 	var spawned = plant.prefab_scene.instantiate() as PlantBehaviour
 	spawned.position = tilemap.map_to_local(t_pos)
@@ -77,7 +75,7 @@ func try_fertilise():
 	player.hud.set_fertiliser_count(cur_fertiliser)
 	
 	var player_tile_pos = tilemap.local_to_map(player.position)
-	tilemap.set_cell(player_tile_pos, 1, Vector2i.ZERO)
+	tilemap.set_cell(player_tile_pos, fertilised_layer_source_ID, Vector2i(1,1))
 
 
 func add_fertiliser(amount := 1):
@@ -86,9 +84,9 @@ func add_fertiliser(amount := 1):
 	print("picked up fertiliser")
 
 
-func add_seed(plant : Plant, amount := 1):
-	cur_seeds[available_plants.find(plant)] += amount
-	player.hud.set_seeds_count(available_plants, cur_seeds)
+func add_seed(amount := 1):
+	cur_seeds += amount
+	player.hud.set_seeds_count(cur_seeds)
 	print("picked up seed")
 
 

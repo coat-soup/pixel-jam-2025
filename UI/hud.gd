@@ -25,7 +25,5 @@ func set_fertiliser_count(amount: int):
 	fertiliser_label.text = "Fertiliser: " + str(amount)
 
 
-func set_seeds_count(plants: Array[Plant], seeds: Array[int]):
-	seed_label.text = ""
-	for i in range(len(plants)):
-		seed_label.text += plants[i].name + " seeds: " + str(seeds[i]) + "\n"
+func set_seeds_count(seeds: int):
+	seed_label.text = "Seeds: " + str(seeds)

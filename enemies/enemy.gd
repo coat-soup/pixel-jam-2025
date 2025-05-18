@@ -11,10 +11,13 @@ class_name Enemy
 
 var time_to_attack := 0.0
 
+var knockback := Vector2.ZERO
+
 
 func _physics_process(delta: float) -> void:
+	knockback = knockback.lerp(Vector2.ZERO, delta * 5.0)
 	var dir := (game_manager.shrine.position - position).normalized()
-	velocity = dir * speed
+	velocity = dir * speed if knockback.length() < 1  else knockback
 	move_and_slide()
 	
 	if time_to_attack > 0:

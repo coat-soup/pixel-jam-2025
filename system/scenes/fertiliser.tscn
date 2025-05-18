@@ -59,6 +59,8 @@ visible = false
 texture = ExtResource("1_1s5dj")
 
 [node name="PickupTrigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupTrigger"]
 shape = SubResource("RectangleShape2D_y62g1")
