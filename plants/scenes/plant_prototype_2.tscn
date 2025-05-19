@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5258de7ktio7"]
+[gd_scene load_steps=4 format=3 uid="uid://f3ero65dgl2f"]
 
 [ext_resource type="Script" path="res://plants/scripts/plant_behaviour.gd" id="1_solgo"]
 [ext_resource type="Texture2D" uid="uid://b8w7adrgo2jja" path="res://plants/sprites/plant-prot-alt.png" id="1_yjrxm"]

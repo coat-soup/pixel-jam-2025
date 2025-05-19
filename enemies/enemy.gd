@@ -14,6 +14,11 @@ var time_to_attack := 0.0
 var knockback := Vector2.ZERO
 
 var status_effects : Array[StatusEffect]
+@onready var sprite: AnimatedSprite2D = $SpriteContainer/AnimatedSprite2D
+const FERTILISER = preload("res://system/scenes/fertiliser.tscn")
+
+var frozen := false
+
 
 func _ready():
 	tick_status_effects()
@@ -44,15 +49,18 @@ func apply_status_effect(e: StatusEffect):
 
 func _physics_process(delta: float) -> void:
 	knockback = knockback.lerp(Vector2.ZERO, delta * 5.0)
-	var dir := (game_manager.shrine.position - position).normalized()
+	var dir := (game_manager.shrine.global_position - global_position).normalized()
 	velocity = dir * speed if knockback.length() < 1  else knockback
 	move_and_slide()
 	
 	if time_to_attack > 0:
 		time_to_attack -= delta
-	elif position.distance_to(game_manager.shrine.position) <= 50.0:
+	elif global_position.distance_to(game_manager.shrine.global_position) <= 50.0:
 		game_manager.damage_shrine(damage)
 		time_to_attack = 1.0/attack_speed
+		
+	var sprite_dir = ("Up" if velocity.y < 0 else "Down") if abs(velocity.y) > abs(velocity.x) else ("Right" if velocity.x > 0 else "Left")
+	sprite.play(("E1" if !frozen else "F") + sprite_dir)
 
 
 func take_damage(amount : int):
@@ -66,6 +74,11 @@ func take_damage(amount : int):
 
 
 func die():
+	if randf() < 0.4:
+		var fert = FERTILISER.instantiate()
+		game_manager.add_child(fert)
+		fert.global_position = global_position
+	
 	for plant in get_tree().get_nodes_in_group("bloodplant"):
 		plant = plant as PlantBehaviour
 		if plant.global_position.distance_to(global_position) <= plant.plant_data.range * 16:

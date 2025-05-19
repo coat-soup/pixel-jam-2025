@@ -5,6 +5,7 @@ extends Node
 @export var particles : PackedScene
 
 @onready var attack_collision: Area2D = $AttackCollision
+@onready var anim: AnimationPlayer = $"../AttackAnim"
 
 var attack_timer := 0.0
 
@@ -22,7 +23,8 @@ func _input(event: InputEvent) -> void:
 func attack():
 	if attack_timer > 0:
 		return
-	add_child(particles.instantiate())
+	#add_child(particles.instantiate())
+	anim.play("PAttack")
 	attack_timer = 1.0/attack_speed
 	
 	var bodies = attack_collision.get_overlapping_bodies()

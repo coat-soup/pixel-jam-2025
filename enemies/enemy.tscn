@@ -228,8 +228,8 @@ _data = {
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
-collision_mask = 5
 script = ExtResource("1_cgad8")
+speed = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -242,7 +242,7 @@ scale = Vector2(0.9, 0.9)
 z_index = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_vktcu")
-animation = &"FUp"
+animation = &"E1Down"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

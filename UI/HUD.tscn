@@ -2,25 +2,27 @@
 
 [ext_resource type="Script" path="res://UI/hud.gd" id="1_fs440"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "blood_label", "plant_bar", "seed_name_label")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "blood_label", "plant_bar", "seed_name_label", "wave_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.997981, 1)
 script = ExtResource("1_fs440")
 fertiliser_label = NodePath("FertiliserLabel")
 seed_label = NodePath("SeedLabel")
 blood_label = NodePath("BloodLabel")
 plant_bar = NodePath("PlantBar")
 seed_name_label = NodePath("SelectedSeedName")
+wave_label = NodePath("WaveLabel")
 
 [node name="FertiliserLabel" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Fertiliser: 0"
+text = "Bones: 0"
 
 [node name="SeedLabel" type="Label" parent="."]
 layout_mode = 0
@@ -38,11 +40,13 @@ text = "Blood: 0"
 
 [node name="PromptText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 234.0
-offset_right = 419.0
-offset_bottom = 49.0
-text = "Press E to fertilise/plant
-Scroll to select plant"
+offset_left = 4.00809
+offset_top = 335.0
+offset_right = 189.008
+offset_bottom = 384.0
+scale = Vector2(0.4, 0.4)
+text = "[E]:  fertilise/plant
+[Scroll]: select plant"
 
 [node name="SelectedSeedName" type="Label" parent="."]
 layout_mode = 0
@@ -69,3 +73,13 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="WaveLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 149.301
+offset_top = 233.0
+offset_right = 486.626
+offset_bottom = 256.0
+text = "A WAVE IS COMING FROM THE NORTH"
+horizontal_alignment = 1

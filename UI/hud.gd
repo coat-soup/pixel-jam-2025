@@ -6,6 +6,7 @@ class_name HUD
 @export var blood_label : Label
 @export var plant_bar : Control
 @export var seed_name_label : Label
+@export var wave_label : Label
 
 const BAR_SLOT_SPRITE = preload("res://UI/bar_slot_sprite.tscn")
 
@@ -29,7 +30,7 @@ func set_selected_plant(id: int):
 
 
 func set_fertiliser_count(amount: int):
-	fertiliser_label.text = "Fertiliser: " + str(amount)
+	fertiliser_label.text = "Bones: " + str(amount)
 
 
 func set_seeds_count(seeds: int):
@@ -38,3 +39,10 @@ func set_seeds_count(seeds: int):
 
 func set_blood_count(amount: int):
 	blood_label.text = "Blood: " + str(amount)
+
+
+func display_wave(dir_text : String = "somewhere probably"):
+	wave_label.visible = true
+	wave_label.text = "A WAVE IS COMING FROM THE " + dir_text
+	await get_tree().create_timer(5.0).timeout
+	wave_label.visible = false

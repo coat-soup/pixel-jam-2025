@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bg70xkelxck87"]
+[gd_scene load_steps=7 format=3 uid="uid://dik2tlbmeq7c"]
 
-[ext_resource type="Script" path="res://plants/scripts/aoe_attack.gd" id="1_lubq1"]
-[ext_resource type="Texture2D" uid="uid://00tgnrwsx25i" path="res://system/sprites/shockwaveprojectile.png" id="2_f7k36"]
+[ext_resource type="Script" path="res://plants/scripts/aoe_attack.gd" id="1_oymle"]
+[ext_resource type="Texture2D" uid="uid://ddf70ikw4rye5" path="res://system/sprites/AOEexplosion.png" id="2_v7pgg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11os5"]
 radius = 50.0
@@ -11,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/Sprite2D:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ resource_name = "trigger"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/Sprite2D:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,16 +57,15 @@ _data = {
 }
 
 [node name="AOEAttack" type="Node2D" node_paths=PackedStringArray("collider")]
-script = ExtResource("1_lubq1")
-knockback = 50.0
+script = ExtResource("1_oymle")
 collider = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v7pgg")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 7
 collision_mask = 7
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("2_f7k36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_11os5")
@@ -83,4 +82,4 @@ offset_left = -5.0
 offset_top = -5.0
 offset_right = 5.0
 offset_bottom = 5.0
-color = Color(0.398334, 0.515234, 0.854905, 1)
+color = Color(1, 0, 0.0166664, 1)
