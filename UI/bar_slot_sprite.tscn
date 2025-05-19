@@ -20,7 +20,7 @@ color = Color(0.355314, 0.355314, 0.355313, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.572988, 0.572988, 0.572988, 1)
+color = Color(0.57, 0.57, 0.57, 0.239216)
 
 [node name="Sprite" type="TextureRect" parent="."]
 layout_mode = 0

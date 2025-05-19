@@ -30,7 +30,7 @@ func set_selected_plant(id: int):
 
 
 func set_fertiliser_count(amount: int):
-	fertiliser_label.text = "Fertiliser: " + str(amount)
+	fertiliser_label.text = "Bones: " + str(amount)
 
 
 func set_seeds_count(seeds: int):

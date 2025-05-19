@@ -15,6 +15,7 @@ var knockback := Vector2.ZERO
 
 var status_effects : Array[StatusEffect]
 @onready var sprite: AnimatedSprite2D = $SpriteContainer/AnimatedSprite2D
+const FERTILISER = preload("res://system/scenes/fertiliser.tscn")
 
 var frozen := false
 
@@ -73,6 +74,11 @@ func take_damage(amount : int):
 
 
 func die():
+	if randf() < 0.4:
+		var fert = FERTILISER.instantiate()
+		game_manager.add_child(fert)
+		fert.global_position = global_position
+	
 	for plant in get_tree().get_nodes_in_group("bloodplant"):
 		plant = plant as PlantBehaviour
 		if plant.global_position.distance_to(global_position) <= plant.plant_data.range * 16:

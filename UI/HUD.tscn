@@ -22,7 +22,7 @@ wave_label = NodePath("WaveLabel")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Fertiliser: 0"
+text = "Bones: 0"
 
 [node name="SeedLabel" type="Label" parent="."]
 layout_mode = 0
@@ -40,11 +40,13 @@ text = "Blood: 0"
 
 [node name="PromptText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 234.0
-offset_right = 419.0
-offset_bottom = 49.0
-text = "Press E to fertilise/plant
-Scroll to select plant"
+offset_left = 4.00809
+offset_top = 335.0
+offset_right = 189.008
+offset_bottom = 384.0
+scale = Vector2(0.4, 0.4)
+text = "[E]:  fertilise/plant
+[Scroll]: select plant"
 
 [node name="SelectedSeedName" type="Label" parent="."]
 layout_mode = 0
