@@ -152,11 +152,12 @@ _data = {
 "cloudmove": SubResource("Animation_4vvw7")
 }
 
-[node name="ArtPrototyping" type="Node2D" node_paths=PackedStringArray("hud", "shrine", "player")]
+[node name="GameplayPrototyping" type="Node2D" node_paths=PackedStringArray("hud", "shrine", "player", "spawn_points")]
 script = ExtResource("1_nv81b")
 hud = NodePath("Player/Hud")
 shrine = NodePath("Shrine")
 player = NodePath("Player")
+spawn_points = [NodePath("EnemySpawns/SpawnPoint"), NodePath("EnemySpawns/SpawnPoint2"), NodePath("EnemySpawns/SpawnPoint3"), NodePath("EnemySpawns/SpawnPoint4")]
 
 [node name="Terrain" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -168,6 +169,20 @@ z_index = 1
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAQAAgAAQAAAAMAAAARAAgAAQAAAAMAAAASAAgAAQAAAAMAAAASAAcAAQAAAAIAAAARAAcAAQAAAAIAAAARAAYAAQAAAAIAAAASAAYAAQAAAAIAAAASAAUAAQAAAAIAAAARAAUAAQAAAAIAAAAQAAQAAQABAAIAAAARAAQAAQABAAIAAAASAAQAAQABAAIAAADZ//b/AQABAAIAAADY//b/AQABAAIAAADX//b/AQABAAIAAADW//b/AQABAAIAAADV//b/AQABAAIAAADZ//r/AQAAAAMAAADY//r/AQAAAAMAAADX//r/AQAAAAMAAADW//r/AQAAAAMAAADV//r/AQAAAAMAAAAQAAUAAQAAAAIAAAAQAAYAAQAAAAIAAAAQAAcAAQAAAAIAAADZ//n/AQAAAAIAAADY//n/AQAAAAIAAADX//n/AQAAAAIAAADW//n/AQAAAAIAAADV//n/AQAAAAIAAADV//j/AQAAAAIAAADW//j/AQAAAAIAAADX//j/AQAAAAIAAADY//j/AQAAAAIAAADZ//j/AQAAAAIAAADZ//f/AQAAAAIAAADY//f/AQAAAAIAAADX//f/AQAAAAIAAADW//f/AQAAAAIAAADV//f/AQAAAAIAAADa//n/AQACAAIAAADa//j/AQACAAIAAADa//f/AQACAAIAAADU//n/AQABAAMAAADU//j/AQABAAMAAADU//f/AQABAAMAAAATAAcAAQACAAIAAAATAAYAAQACAAIAAAATAAUAAQACAAIAAAAPAAcAAQABAAMAAAAPAAYAAQABAAMAAAAPAAUAAQABAAMAAAD7/+D/AQAAAAEAAAD6/+D/AQAAAAEAAAD5/+D/AQAAAAEAAAD5/9//AQAAAAEAAAD6/9//AQAAAAEAAAD7/9//AQAAAAEAAAD7/97/AQAAAAEAAAD6/97/AQAAAAEAAAD5/97/AQAAAAEAAAD5/93/AQAAAAEAAAD6/93/AQAAAAEAAAD7/93/AQAAAAEAAAD7/9z/AQAAAAEAAAD6/9z/AQAAAAEAAAD5/9z/AQAAAAEAAAD5/9v/AQAAAAAAAAD6/9v/AQAAAAAAAAD7/9v/AQAAAAAAAAD5/+H/AQABAAAAAAD6/+H/AQABAAAAAAD7/+H/AQABAAAAAAD8/+D/AQABAAEAAAD8/9//AQABAAEAAAD8/97/AQABAAEAAAD8/93/AQABAAEAAAD8/9z/AQABAAEAAAD4/+D/AQACAAEAAAD4/9//AQACAAEAAAD4/97/AQACAAEAAAD4/93/AQACAAEAAAD4/9z/AQACAAEAAADs/xYAAQAAAAEAAADt/xYAAQAAAAEAAADu/xYAAQAAAAEAAADu/xUAAQAAAAEAAADt/xUAAQAAAAEAAADs/xUAAQAAAAEAAADs/xcAAQAAAAEAAADt/xcAAQAAAAEAAADu/xcAAQAAAAEAAADu/xgAAQAAAAEAAADt/xgAAQAAAAEAAADs/xgAAQAAAAEAAADs/xkAAQABAAAAAADt/xkAAQABAAAAAADu/xkAAQABAAAAAADu/xQAAQAAAAAAAADt/xQAAQAAAAAAAADs/xQAAQAAAAAAAADv/xUAAQABAAEAAADv/xYAAQABAAEAAADv/xcAAQABAAEAAADv/xgAAQABAAEAAADr/xgAAQACAAEAAADr/xcAAQACAAEAAADr/xYAAQACAAEAAADr/xUAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_0mhw2")
+
+[node name="EnemySpawns" type="Node2D" parent="."]
+
+[node name="SpawnPoint" type="Node2D" parent="EnemySpawns"]
+position = Vector2(-101, -465)
+
+[node name="SpawnPoint2" type="Node2D" parent="EnemySpawns"]
+position = Vector2(235, 98)
+
+[node name="SpawnPoint3" type="Node2D" parent="EnemySpawns"]
+position = Vector2(-344, 223)
+
+[node name="SpawnPoint4" type="Node2D" parent="EnemySpawns"]
+position = Vector2(-558, -125)
 
 [node name="PlayerTest" parent="." instance=ExtResource("6_v8u77")]
 visible = false
@@ -188,24 +203,23 @@ offset_right = -320.0
 offset_bottom = -180.0
 
 [node name="Shrine" parent="." instance=ExtResource("9_ajpiq")]
-position = Vector2(-216, -172)
+position = Vector2(-141, -189)
 
 [node name="Seeds" parent="." instance=ExtResource("10_n2x4w")]
-position = Vector2(-102, -183)
+position = Vector2(-19, -183)
 
 [node name="Seeds2" parent="." instance=ExtResource("10_n2x4w")]
-position = Vector2(-113, -210)
+position = Vector2(-30, -210)
 
 [node name="Fertiliser" parent="." instance=ExtResource("11_uwts8")]
-position = Vector2(-159, -166)
+position = Vector2(-247, -213)
 
 [node name="Fertiliser2" parent="." instance=ExtResource("11_uwts8")]
-position = Vector2(-146, -196)
+position = Vector2(-191, -236)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("12_uexfl")]
 position = Vector2(121, -75)
 game_manager = NodePath("..")
-speed = 20.0
 
 [node name="Cloudmap" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.505882)

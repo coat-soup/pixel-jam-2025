@@ -17,9 +17,6 @@
 [ext_resource type="Resource" uid="uid://cnt14b4d0qrbl" path="res://plants/resources/plant_blood.tres" id="11_0c8n4"]
 [ext_resource type="Texture2D" uid="uid://8p3q4y5ehkfh" path="res://player/sprites/large shadow.png" id="16_bsaim"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bdojh"]
-radius = 30.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3o0q"]
 atlas = ExtResource("2_grwav")
 region = Rect2(0, 0, 32, 32)
@@ -73,6 +70,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1t6l6"]
 radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdojh"]
+radius = 30.0
 
 [sub_resource type="Animation" id="Animation_f8b2v"]
 resource_name = "PAttack"
@@ -308,18 +308,6 @@ script = ExtResource("3_l4854")
 player = NodePath("..")
 available_plants = Array[ExtResource("5_glohh")]([ExtResource("6_28hm6"), ExtResource("8_07a6f"), ExtResource("8_33nmf"), ExtResource("10_5phff"), ExtResource("9_6i5mg"), ExtResource("10_lrgl1"), ExtResource("11_0c8n4")])
 
-[node name="Attack" type="Node2D" parent="."]
-script = ExtResource("8_ko4vy")
-particles = ExtResource("9_noxr8")
-
-[node name="AttackCollision" type="Area2D" parent="Attack"]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/AttackCollision"]
-position = Vector2(0, -11)
-shape = SubResource("CircleShape2D_bdojh")
-
 [node name="sprite container" type="Node2D" parent="."]
 z_index = 1
 
@@ -333,6 +321,18 @@ position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_1t6l6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Attack" type="Node2D" parent="."]
+script = ExtResource("8_ko4vy")
+particles = ExtResource("9_noxr8")
+
+[node name="AttackCollision" type="Area2D" parent="Attack"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/AttackCollision"]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_bdojh")
 
 [node name="AttackAnim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../WalkandIdle")

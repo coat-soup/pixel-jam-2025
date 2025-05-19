@@ -5,11 +5,11 @@ class_name SlowStatus
 
 func begin(enemy : Enemy):
 	enemy.speed *= speed_multiplier
-	#TODO: swap sprite
+	enemy.frozen = true
 
 func end(enemy : Enemy):
 	enemy.speed /= speed_multiplier
-	#TODO: reset sprite
+	enemy.frozen = false
 
 func tick(enemy : Enemy):
 	pass
