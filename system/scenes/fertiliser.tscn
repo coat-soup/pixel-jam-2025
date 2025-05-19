@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://doodsjk51d3so"]
+[gd_scene load_steps=10 format=3 uid="uid://doodsjk51d3so"]
 
 [ext_resource type="Texture2D" uid="uid://cq2q8o0cywfp4" path="res://system/sprites/fertiliser.png" id="1_1s5dj"]
 [ext_resource type="Script" path="res://system/scripts/fertiliser.gd" id="1_b0tql"]
 [ext_resource type="Texture2D" uid="uid://bshcamald88sx" path="res://world/newcorpse.png" id="2_bcb08"]
+[ext_resource type="Texture2D" uid="uid://btmj0m1ehvuu2" path="res://player/sprites/small shadow.png" id="4_okjas"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ym6"]
 atlas = ExtResource("2_bcb08")
@@ -51,6 +52,7 @@ y_sort_enabled = true
 script = ExtResource("1_b0tql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_ba5te")
 animation = &"Corpse3"
 
@@ -64,3 +66,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupTrigger"]
 shape = SubResource("RectangleShape2D_y62g1")
+
+[node name="ShadowContainer" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ShadowContainer"]
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(0, 2)
+texture = ExtResource("4_okjas")

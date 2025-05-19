@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3ucbhtcif5xh"]
+[gd_scene load_steps=8 format=3 uid="uid://c3ucbhtcif5xh"]
 
 [ext_resource type="Script" path="res://system/scripts/seeds.gd" id="1_6da7d"]
 [ext_resource type="Texture2D" uid="uid://bv4uxsssny2rf" path="res://system/sprites/seeds.png" id="2_at480"]
 [ext_resource type="Texture2D" uid="uid://dvdab744fpl5o" path="res://UI/seedandcorpsecount.png" id="3_45stb"]
+[ext_resource type="Texture2D" uid="uid://btmj0m1ehvuu2" path="res://player/sprites/small shadow.png" id="4_om0bb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwb1w"]
 atlas = ExtResource("3_45stb")
@@ -27,6 +28,7 @@ y_sort_enabled = true
 script = ExtResource("1_6da7d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_j806o")
 
@@ -41,3 +43,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupTrigger"]
 position = Vector2(-0.5, 2.5)
 shape = SubResource("CircleShape2D_hd8y2")
+
+[node name="ShadowContainer" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ShadowContainer"]
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(0, 4)
+texture = ExtResource("4_om0bb")
