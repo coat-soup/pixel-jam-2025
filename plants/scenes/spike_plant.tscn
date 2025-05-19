@@ -1,13 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://duv8g65i0xqk6"]
+[gd_scene load_steps=7 format=3 uid="uid://duv8g65i0xqk6"]
 
 [ext_resource type="Script" path="res://plants/scripts/plant_behaviour.gd" id="1_uwf2m"]
 [ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="2_nuy8e"]
+[ext_resource type="Texture2D" uid="uid://b0argfgp800ub" path="res://plants/sprites/cactus.png" id="2_x77we"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjtuo"]
+atlas = ExtResource("2_x77we")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3cme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjtuo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtdti"]
 size = Vector2(16, 16)
 
 [node name="SpikePlant" type="Node2D"]
 script = ExtResource("1_uwf2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q3cme")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -22,6 +41,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_rtdti")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
@@ -29,6 +49,7 @@ offset_bottom = 8.0
 color = Color(0.859785, 0.651845, 0.652374, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -23.0
 offset_top = -14.0
 offset_right = 27.0

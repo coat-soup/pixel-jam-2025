@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cwq5j07x8t8ml"]
 
 [ext_resource type="Script" path="res://plants/scripts/aoe_attack.gd" id="1_wf2qt"]
-[ext_resource type="Texture2D" uid="uid://cpryd7ym5dkh1" path="res://system/sprites/effects.png" id="2_b3cjt"]
+[ext_resource type="Texture2D" uid="uid://ddf70ikw4rye5" path="res://system/sprites/AOEexplosion.png" id="2_rljke"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11os5"]
 radius = 50.0
@@ -61,7 +61,7 @@ script = ExtResource("1_wf2qt")
 collider = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_b3cjt")
+texture = ExtResource("2_rljke")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 7
@@ -77,6 +77,7 @@ libraries = {
 autoplay = "trigger"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -5.0
 offset_top = -5.0
 offset_right = 5.0
