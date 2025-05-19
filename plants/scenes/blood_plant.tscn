@@ -1,13 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://onptea7a38tv"]
+[gd_scene load_steps=7 format=3 uid="uid://onptea7a38tv"]
 
 [ext_resource type="Script" path="res://plants/scripts/plant_behaviour.gd" id="1_81y6q"]
+[ext_resource type="Texture2D" uid="uid://di6vgi8j0uvm0" path="res://plants/sprites/randoplants.png" id="2_2wdcu"]
 [ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="2_i55ye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn17m"]
+atlas = ExtResource("2_2wdcu")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p11ag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn17m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtdti"]
 size = Vector2(16, 16)
 
 [node name="BloodPlant" type="Node2D" groups=["bloodplant"]]
 script = ExtResource("1_81y6q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p11ag")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -22,6 +41,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_rtdti")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
@@ -29,8 +49,9 @@ offset_bottom = 8.0
 color = Color(0.835575, 0.256572, 0.302219, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -23.0
-offset_top = -14.0
+offset_top = -13.0
 offset_right = 27.0
-offset_bottom = 9.0
+offset_bottom = 10.0
 text = "Blood"
