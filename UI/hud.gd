@@ -7,6 +7,7 @@ class_name HUD
 @export var plant_bar : Control
 @export var seed_name_label : Label
 @export var wave_label : Label
+@export var blood_warning_label : Label
 
 const BAR_SLOT_SPRITE = preload("res://UI/bar_slot_sprite.tscn")
 
@@ -46,3 +47,9 @@ func display_wave(dir_text : String = "somewhere probably"):
 	wave_label.text = "A WAVE IS COMING FROM THE " + dir_text
 	await get_tree().create_timer(5.0).timeout
 	wave_label.visible = false
+
+
+func warn_blood():
+	blood_warning_label.visible = true
+	await get_tree().create_timer(3.0).timeout
+	blood_warning_label.visible = false

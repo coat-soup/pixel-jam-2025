@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://dtr4o6yeerxki"]
 
-[ext_resource type="PackedScene" uid="uid://cwq5j07x8t8ml" path="res://plants/scenes/aoe_attack_spikes.tscn" id="1_23x4w"]
-[ext_resource type="PackedScene" uid="uid://2oto82bbvo2k" path="res://plants/scenes/plant_prototype.tscn" id="2_arxq5"]
+[ext_resource type="PackedScene" uid="uid://dik2tlbmeq7c" path="res://plants/scenes/aoe_attack_explosion.tscn" id="1_d54my"]
+[ext_resource type="PackedScene" uid="uid://qoo773ododw0" path="res://plants/scenes/plant_tomato.tscn" id="1_dgow4"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_gulrh"]
-[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="4_cb0nh"]
+[ext_resource type="Texture2D" uid="uid://wy4uk12x8rps" path="res://UI/tomatohud.png" id="4_b7t2r"]
 
 [resource]
 script = ExtResource("3_gulrh")
-name = "Explody"
-prefab_scene = ExtResource("2_arxq5")
-sprite = ExtResource("4_cb0nh")
+name = "Tomato"
+prefab_scene = ExtResource("1_dgow4")
+sprite = ExtResource("4_b7t2r")
 growth_time = 8.0
-blood_cost = 1
-range = 8.0
-damage = 0.0
-speed = 0.5
-attack_scene = ExtResource("1_23x4w")
-attack_delay = 0.0
+blood_cost = 3
+range = 5.0
+damage = 20.0
+speed = 0.2
+attack_scene = ExtResource("1_d54my")
+attack_delay = 1.0

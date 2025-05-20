@@ -31,7 +31,7 @@ func damage_shrine(amount : int):
 	(shrine.get_node("Label") as Label).text = str(cur_shrine_hp) + " HP"
 	if cur_shrine_hp <= 0:
 		print("GAME OVER")
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://levels/loselevel.tscn")
 
 
 func spawn_seed():

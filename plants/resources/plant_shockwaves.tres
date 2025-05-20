@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bg70xkelxck87" path="res://plants/scenes/aoe_attack_shockwave.tscn" id="1_r412w"]
 [ext_resource type="PackedScene" uid="uid://nuouti8wfyud" path="res://plants/scenes/shockwave_plant.tscn" id="2_f8ld7"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_ur4jc"]
-[ext_resource type="Texture2D" uid="uid://cn8tuvnk11ym4" path="res://plants/sprites/shockwave.png" id="4_yq7hj"]
+[ext_resource type="Texture2D" uid="uid://daky5kufurtbm" path="res://UI/shockwavehud.png" id="4_rggkf"]
 
 [resource]
 script = ExtResource("3_ur4jc")
 name = "Shockwave"
 prefab_scene = ExtResource("2_f8ld7")
-sprite = ExtResource("4_yq7hj")
+sprite = ExtResource("4_rggkf")
 growth_time = 8.0
 blood_cost = 0
 range = 3.0

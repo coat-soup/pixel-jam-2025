@@ -76,7 +76,7 @@ func take_damage(amount : int):
 func die():
 	if randf() < 0.4:
 		var fert = FERTILISER.instantiate()
-		game_manager.add_child(fert)
+		game_manager.add_child.call_deferred(fert)
 		fert.global_position = global_position
 	
 	for plant in get_tree().get_nodes_in_group("bloodplant"):

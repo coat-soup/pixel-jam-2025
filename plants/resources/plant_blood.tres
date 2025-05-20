@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="Plant" load_steps=4 format=3 uid="uid://cnt14b4d0qrbl"]
 
 [ext_resource type="PackedScene" uid="uid://onptea7a38tv" path="res://plants/scenes/blood_plant.tscn" id="1_3rbep"]
+[ext_resource type="Texture2D" uid="uid://dyw0fdd5gu3ov" path="res://UI/bloodhud.png" id="3_ijqe0"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_t545r"]
-[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="4_pd05w"]
 
 [resource]
 script = ExtResource("3_t545r")
-name = "Blood"
+name = "Blood Collector"
 prefab_scene = ExtResource("1_3rbep")
-sprite = ExtResource("4_pd05w")
+sprite = ExtResource("3_ijqe0")
 growth_time = 8.0
 blood_cost = 0
 range = 5.0

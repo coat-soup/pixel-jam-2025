@@ -1,17 +1,19 @@
 [gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://b6h4bprexipwk"]
 
+[ext_resource type="PackedScene" uid="uid://bd3k50143vvw8" path="res://plants/scenes/plant_ice.tscn" id="1_5xkfd"]
 [ext_resource type="PackedScene" uid="uid://bgyrp00qt1b02" path="res://plants/scenes/projectile_slow.tscn" id="1_ysqwe"]
-[ext_resource type="PackedScene" uid="uid://2oto82bbvo2k" path="res://plants/scenes/plant_prototype.tscn" id="2_v02q2"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_yv5l4"]
-[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="4_dpjpl"]
+[ext_resource type="Texture2D" uid="uid://bx3t13snhepy" path="res://UI/snowhud.png" id="4_hvdwo"]
 
 [resource]
 script = ExtResource("3_yv5l4")
-name = "Ice"
-prefab_scene = ExtResource("2_v02q2")
-sprite = ExtResource("4_dpjpl")
+name = "Mint"
+prefab_scene = ExtResource("1_5xkfd")
+sprite = ExtResource("4_hvdwo")
 growth_time = 8.0
-range = 10.0
+blood_cost = 0
+range = 7.0
 damage = 4.0
 speed = 0.3
 attack_scene = ExtResource("1_ysqwe")
+attack_delay = 0.0

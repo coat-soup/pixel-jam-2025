@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://cwq5j07x8t8ml" path="res://plants/scenes/aoe_attack_spikes.tscn" id="1_x26qo"]
 [ext_resource type="PackedScene" uid="uid://duv8g65i0xqk6" path="res://plants/scenes/spike_plant.tscn" id="2_624fv"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_w3irp"]
-[ext_resource type="Texture2D" uid="uid://b0argfgp800ub" path="res://plants/sprites/cactus.png" id="4_hi2ui"]
+[ext_resource type="Texture2D" uid="uid://sqn0d1h8qqdq" path="res://UI/cactushud.png" id="4_4d2fx"]
 
 [resource]
 script = ExtResource("3_w3irp")
-name = "Spikes"
+name = "Cactus"
 prefab_scene = ExtResource("2_624fv")
-sprite = ExtResource("4_hi2ui")
+sprite = ExtResource("4_4d2fx")
 growth_time = 8.0
 blood_cost = 0
 range = 1.3

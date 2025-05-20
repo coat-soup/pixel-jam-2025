@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://bpem5vv10cdm6"]
 
 [ext_resource type="PackedScene" uid="uid://d0h8twwaq84qv" path="res://plants/scenes/projectile_attack.tscn" id="1_beajb"]
-[ext_resource type="PackedScene" uid="uid://2oto82bbvo2k" path="res://plants/scenes/plant_prototype.tscn" id="2_qsrff"]
+[ext_resource type="PackedScene" uid="uid://blvymiqo6fyom" path="res://plants/scenes/plant_corn.tscn" id="1_gtt66"]
 [ext_resource type="Script" path="res://plants/scripts/plant.gd" id="3_trbws"]
-[ext_resource type="Texture2D" uid="uid://dk1ujvte5bdkh" path="res://plants/sprites/plant-prot.png" id="4_s07m2"]
+[ext_resource type="Texture2D" uid="uid://cuo2xx8cvet5d" path="res://UI/cornhud.png" id="4_royv8"]
 
 [resource]
 script = ExtResource("3_trbws")
-name = "Shooter"
-prefab_scene = ExtResource("2_qsrff")
-sprite = ExtResource("4_s07m2")
+name = "Corn"
+prefab_scene = ExtResource("1_gtt66")
+sprite = ExtResource("4_royv8")
 growth_time = 8.0
 blood_cost = 0
-range = 10.0
+range = 7.0
 damage = 4.0
 speed = 1.0
 attack_scene = ExtResource("1_beajb")

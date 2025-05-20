@@ -32,7 +32,8 @@ func attack(target : Node2D):
 	var attack_scene = plant_data.attack_scene.instantiate() as PlantAttack
 	#attack_scene.position = position
 	attack_scene.plant_data = plant_data
-	attack_scene.target = target
+	if is_instance_valid(target):
+		attack_scene.target = target
 	attack_scene.initialised = true
 	add_child(attack_scene)
 	time_to_attack = 1.0/plant_data.speed

@@ -55,6 +55,7 @@ func try_plant(plant : Plant):
 		return
 	elif cur_blood < plant.blood_cost:
 		print("Not enough blood!")
+		player.hud.warn_blood()
 		return
 	
 	cur_blood -= plant.blood_cost

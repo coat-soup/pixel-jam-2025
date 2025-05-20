@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bgxw3jxp4p2yo" path="res://UI/CompassW.png" id="6_8e1v7"]
 [ext_resource type="Texture2D" uid="uid://bm56hlont3fma" path="res://UI/CompassS.png" id="7_t2vuu"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "blood_label", "plant_bar", "seed_name_label", "wave_label")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "blood_label", "plant_bar", "seed_name_label", "wave_label", "blood_warning_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +23,7 @@ blood_label = NodePath("BloodLabel")
 plant_bar = NodePath("PlantBar")
 seed_name_label = NodePath("SelectedSeedName")
 wave_label = NodePath("WaveLabel")
+blood_warning_label = NodePath("BloodWarningLabel")
 
 [node name="FertiliserLabel" type="Label" parent="."]
 layout_mode = 0
@@ -61,6 +62,17 @@ offset_top = 283.0
 offset_right = 419.0
 offset_bottom = 332.0
 text = "nplant"
+horizontal_alignment = 1
+
+[node name="BloodWarningLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 234.473
+offset_top = 256.0
+offset_right = 419.473
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Not enough blood!"
 horizontal_alignment = 1
 
 [node name="PlantBar" type="Control" parent="."]

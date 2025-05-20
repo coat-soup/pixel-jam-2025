@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh8uh60v1s1ag"]
+
+[ext_resource type="Script" path="res://system/scripts/restartbutton.gd" id="1_q3gna"]
+
+[node name="Loselevel" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 204.0
+offset_top = 142.0
+offset_right = 445.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 50
+text = "YOU LOSE"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 265.0
+offset_top = 217.0
+offset_right = 359.0
+offset_bottom = 248.0
+text = "Play again?"
+script = ExtResource("1_q3gna")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
