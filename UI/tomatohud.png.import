@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ne0xcdnuufu"
-path="res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+uid="uid://wy4uk12x8rps"
+path="res://.godot/imported/tomatohud.png-2e2f2cda2fec7e02940ee662dd9d4a7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fertilizedtiles.png"
-dest_files=["res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"]
+source_file="res://UI/tomatohud.png"
+dest_files=["res://.godot/imported/tomatohud.png-2e2f2cda2fec7e02940ee662dd9d4a7d.ctex"]
 
 [params]
 

@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://jnsgf244fssk"]
+[gd_scene load_steps=8 format=3 uid="uid://jnsgf244fssk"]
 
 [ext_resource type="Script" path="res://UI/hud.gd" id="1_fs440"]
+[ext_resource type="Texture2D" uid="uid://d20k7wpij57pm" path="res://UI/CompassBase.png" id="2_ubq1u"]
+[ext_resource type="Texture2D" uid="uid://dm781q3lqy5s" path="res://UI/CompassEye.png" id="3_m25dh"]
+[ext_resource type="Texture2D" uid="uid://bbvba0fuqdljk" path="res://UI/CompassN.png" id="4_yi3ta"]
+[ext_resource type="Texture2D" uid="uid://drwq8i65e7gb0" path="res://UI/CompassE.png" id="5_s53oj"]
+[ext_resource type="Texture2D" uid="uid://bgxw3jxp4p2yo" path="res://UI/CompassW.png" id="6_8e1v7"]
+[ext_resource type="Texture2D" uid="uid://bm56hlont3fma" path="res://UI/CompassS.png" id="7_t2vuu"]
 
 [node name="Hud" type="Control" node_paths=PackedStringArray("fertiliser_label", "seed_label", "blood_label", "plant_bar", "seed_name_label", "wave_label")]
 layout_mode = 3
@@ -83,3 +89,49 @@ offset_right = 486.626
 offset_bottom = 256.0
 text = "A WAVE IS COMING FROM THE NORTH"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 581.173
+offset_top = 19.0
+offset_right = 621.173
+offset_bottom = 59.0
+texture = ExtResource("2_ubq1u")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_m25dh")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 15.452
+offset_top = -10.0
+offset_right = 35.452
+offset_bottom = 10.0
+texture = ExtResource("4_yi3ta")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 41.0829
+offset_top = 15.0
+offset_right = 61.0829
+offset_bottom = 35.0
+texture = ExtResource("5_s53oj")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -10.0202
+offset_top = 15.0
+offset_right = 9.97977
+offset_bottom = 35.0
+texture = ExtResource("6_8e1v7")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 16.0324
+offset_top = 41.0
+offset_right = 36.0324
+offset_bottom = 61.0
+texture = ExtResource("7_t2vuu")

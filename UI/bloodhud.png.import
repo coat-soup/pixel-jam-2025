@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ne0xcdnuufu"
-path="res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+uid="uid://dyw0fdd5gu3ov"
+path="res://.godot/imported/bloodhud.png-62a8f579788a39aaa2bbd71901183004.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fertilizedtiles.png"
-dest_files=["res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"]
+source_file="res://UI/bloodhud.png"
+dest_files=["res://.godot/imported/bloodhud.png-62a8f579788a39aaa2bbd71901183004.ctex"]
 
 [params]
 

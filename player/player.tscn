@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://b4kguqxv2ln1k" path="res://plants/resources/plant_shockwaves.tres" id="8_33nmf"]
 [ext_resource type="Script" path="res://player/scripts/player_attack_manager.gd" id="8_ko4vy"]
 [ext_resource type="Resource" uid="uid://bcag5ru8powrx" path="res://plants/resources/plant_fire.tres" id="9_6i5mg"]
-[ext_resource type="PackedScene" uid="uid://d4dwv7suvhn6s" path="res://player/player_swing_vfx.tscn" id="9_noxr8"]
+[ext_resource type="PackedScene" path="res://player/player_swing_vfx.tscn" id="9_noxr8"]
 [ext_resource type="Resource" uid="uid://b6h4bprexipwk" path="res://plants/resources/plant_ice.tres" id="10_5phff"]
 [ext_resource type="Resource" uid="uid://dtr4o6yeerxki" path="res://plants/resources/plant_explody.tres" id="10_lrgl1"]
 [ext_resource type="Texture2D" uid="uid://c6usxe7kphim0" path="res://player/sprites/scythe.png" id="10_sfnxl"]
