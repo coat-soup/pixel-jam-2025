@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://eomc8s0bn48w"]
+[gd_scene load_steps=24 format=4 uid="uid://eomc8s0bn48w"]
 
 [ext_resource type="Script" path="res://system/scripts/game_manager.gd" id="1_nv81b"]
 [ext_resource type="Texture2D" uid="uid://cvkk56wg5gehf" path="res://world/path.png" id="2_q4pn7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ucbhtcif5xh" path="res://system/scenes/seeds.tscn" id="10_n2x4w"]
 [ext_resource type="PackedScene" uid="uid://doodsjk51d3so" path="res://system/scenes/fertiliser.tscn" id="11_uwts8"]
 [ext_resource type="Texture2D" uid="uid://c2x1yws6xqgux" path="res://world/cloudmap.png" id="13_odkbg"]
+[ext_resource type="AudioStream" uid="uid://d1bs7xjt7i0n5" path="res://celtic-folk-song-109238.mp3" id="13_uhy72"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j03qi"]
 texture = ExtResource("2_q4pn7")
@@ -248,3 +249,8 @@ libraries = {
 "": SubResource("AnimationLibrary_4hseq")
 }
 autoplay = "cloudmove"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_uhy72")
+volume_db = -7.235
+autoplay = true
