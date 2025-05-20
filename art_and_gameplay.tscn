@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://ccagt33jipa3t" path="res://world/bridgetest.png" id="1_y2t6i"]
 [ext_resource type="Texture2D" uid="uid://chtlb6rqus72s" path="res://world/waterfullsheet.png" id="2_ampt4"]
 [ext_resource type="PackedScene" uid="uid://1mcrivp37vkl" path="res://levels/playerTest.tscn" id="3_35ws6"]
-[ext_resource type="Texture2D" uid="uid://b5e8m6wyahkrg" path="res://world/fertilizedtiles.png" id="4_cit4b"]
 [ext_resource type="PackedScene" uid="uid://b00gmy7bv7qai" path="res://player/player.tscn" id="5_6clrj"]
 [ext_resource type="PackedScene" uid="uid://jnsgf244fssk" path="res://UI/HUD.tscn" id="6_7okgu"]
 [ext_resource type="PackedScene" uid="uid://f785xxei2qnq" path="res://system/scenes/shrine.tscn" id="7_poq4l"]
@@ -46,8 +45,11 @@ texture = ExtResource("1_y2t6i")
 0:3/0 = 0
 1:3/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_65p30"]
+load_path = "res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a0g1e"]
-texture = ExtResource("4_cit4b")
+texture = SubResource("CompressedTexture2D_65p30")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -221,4 +223,5 @@ autoplay = "cloudmove"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_l3jd4")
+volume_db = -7.235
 autoplay = true

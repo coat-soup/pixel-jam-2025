@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ne0xcdnuufu"
-path="res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+uid="uid://cuo2xx8cvet5d"
+path="res://.godot/imported/cornhud.png-b01ede5bf820217d848b0158aa1b24f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fertilizedtiles.png"
-dest_files=["res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"]
+source_file="res://UI/cornhud.png"
+dest_files=["res://.godot/imported/cornhud.png-b01ede5bf820217d848b0158aa1b24f4.ctex"]
 
 [params]
 

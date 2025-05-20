@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ne0xcdnuufu"
-path="res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+uid="uid://cldgv5u8iug4r"
+path="res://.godot/imported/chilihud.png-ccccb91f44ebe2d94e2173ab8ed9b6bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fertilizedtiles.png"
-dest_files=["res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"]
+source_file="res://UI/chilihud.png"
+dest_files=["res://.godot/imported/chilihud.png-ccccb91f44ebe2d94e2173ab8ed9b6bc.ctex"]
 
 [params]
 

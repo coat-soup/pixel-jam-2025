@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ne0xcdnuufu"
-path="res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+uid="uid://sqn0d1h8qqdq"
+path="res://.godot/imported/cactushud.png-f33c8da1c25462c351d2f9e2e6a8d221.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fertilizedtiles.png"
-dest_files=["res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"]
+source_file="res://UI/cactushud.png"
+dest_files=["res://.godot/imported/cactushud.png-f33c8da1c25462c351d2f9e2e6a8d221.ctex"]
 
 [params]
 

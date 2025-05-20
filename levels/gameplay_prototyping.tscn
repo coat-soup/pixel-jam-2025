@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://system/scripts/game_manager.gd" id="1_nv81b"]
 [ext_resource type="Texture2D" uid="uid://cvkk56wg5gehf" path="res://world/path.png" id="2_q4pn7"]
 [ext_resource type="Texture2D" uid="uid://ccagt33jipa3t" path="res://world/bridgetest.png" id="3_ihy6l"]
-[ext_resource type="Texture2D" uid="uid://b5e8m6wyahkrg" path="res://world/fertilizedtiles.png" id="4_ksl5b"]
+[ext_resource type="Texture2D" uid="uid://b6ne0xcdnuufu" path="res://world/fertilizedtiles.png" id="4_ksl5b"]
 [ext_resource type="Texture2D" uid="uid://chtlb6rqus72s" path="res://world/waterfullsheet.png" id="5_6j6ev"]
 [ext_resource type="PackedScene" uid="uid://1mcrivp37vkl" path="res://levels/playerTest.tscn" id="6_v8u77"]
 [ext_resource type="PackedScene" uid="uid://b00gmy7bv7qai" path="res://player/player.tscn" id="7_88bdn"]

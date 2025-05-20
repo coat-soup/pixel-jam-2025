@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ne0xcdnuufu"
-path="res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"
+uid="uid://d20k7wpij57pm"
+path="res://.godot/imported/CompassBase.png-39e85142db47dadf03bc2e98d0da58c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/fertilizedtiles.png"
-dest_files=["res://.godot/imported/fertilizedtiles.png-d36ec250733bbfbb6c1cb349291067b5.ctex"]
+source_file="res://UI/CompassBase.png"
+dest_files=["res://.godot/imported/CompassBase.png-39e85142db47dadf03bc2e98d0da58c9.ctex"]
 
 [params]
 

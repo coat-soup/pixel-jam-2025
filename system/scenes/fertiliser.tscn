@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y62g1"]
-size = Vector2(16, 16)
+size = Vector2(18, 18)
 
 [node name="Fertiliser" type="Node2D"]
 y_sort_enabled = true
